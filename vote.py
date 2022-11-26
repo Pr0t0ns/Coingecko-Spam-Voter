@@ -6,9 +6,9 @@ class Coingecko:
         self.proxy = proxy
         self.vote_type = vote_type
         self.token_id = token_id
-        self.vote_url = 'https://www.coingecko.com/en/sentiment_votes?' # putting the self to use xd
+        self.vote_url = 'https://www.coingecko.com/en/sentiment_votes?'
         self.useragent = UserAgent()
-        self.ua = self.useragent.get_random_user_agent() # there we go
+        self.ua = self.useragent.get_random_user_agent()
         self.csrf_url = 'https://www.coingecko.com/accounts/csrf_meta.json'
         if self.proxy != None: self.session.proxies = {'http': f'http://{self.proxy}', 'https': f'http://{self.proxy}'}
     def __cf_bm(self):
@@ -36,8 +36,8 @@ class Coingecko:
     def spam_votes(self, csrf, cf_bm_cookie, session_cookie):
         headers = {
             "accept": "text/javascript, application/javascript, application/ecmascript, application/x-ecmascript, */*; q=0.01",
-            "accept-encoding": "gzip, deflate, br", # found the cookie
-            "accept-language": "en-US,en;q=0.9", # ok edge still has them we will see if we need them 
+            "accept-encoding": "gzip, deflate, br",
+            "accept-language": "en-US,en;q=0.9", 
             "cookie":f"__cf_bm={cf_bm_cookie}; datadome=4YIc~SCOARA4tqV4_8MkLVOTkv_mZ1RQmBvjssKDCO~JNYqOdwZ2Y-zkkNk-wDigSBDS7Z8K3C1Bk0NYOjJxIaaceinGmJbuo6dpVMRrCNFnpSSltpF3OKc6XsnE0Xqt; _session_id={session_cookie};",
             "origin": "https://www.coingecko.com",
             "referer": "https://www.coingecko.com/en/coins",
